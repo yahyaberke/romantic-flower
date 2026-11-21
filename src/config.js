@@ -4,8 +4,8 @@ export const config = {
   startButton: 'Aç 🌸',
   finalTitle: 'Bu çiçek senin için açtı',
   finalMessage:
-    'Her gün yeniden açan bir çiçek gibi, sana olan sevgim de her gün biraz daha büyüyor. İyi ki varsın. ❤️',
-  signature: '— Seni seven biri',
+    'Bu çiçek senin güzelliğine yetişemez belki ama sana olan sevgimi anlatmaya çalışır. Her yaprağı sana olan sevgimden bir parça, her açışı sana yeniden âşık oluşum. İyi ki varsın Sudenur. ❤️',
+  signature: '— Seni çok seven biri',
   replayButton: 'Tekrar izle',
 };
 
