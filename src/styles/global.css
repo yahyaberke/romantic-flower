@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600&display=swap');
+
+:root {
+  --bg-1: #14061f;
+  --bg-2: #2a0d3a;
+  --bg-3: #4a1340;
+  --pink: #ff6f9a;
+  --pink-soft: #ffb3c9;
+  --gold: #ffd36e;
+  --text: #fff4f8;
+  --text-dim: #e9c9d6;
+  --card: rgba(30, 8, 40, 0.55);
+  --font-script: 'Dancing Script', cursive;
+  --font-body: 'Quicksand', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-1);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.app {
+  position: relative;
+  min-height: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Gece gökyüzü + yıldızlar */
+.sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 62%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 45% 12%, #ffe9f1 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 38%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 78% 22%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 70%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 8% 82%, #ffe9f1 50%, transparent 51%),
+    radial-gradient(1px 1px at 52% 88%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 92% 46%, #fff 50%, transparent 51%),
+    radial-gradient(ellipse at 50% 110%, var(--bg-3) 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+}
+
+/* Butonlar */
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85em 2.2em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #ff6f9a, #d92e64);
+  box-shadow: 0 8px 30px rgba(255, 111, 154, 0.45);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.btn-ghost {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 179, 201, 0.4);
+  font-size: 0.95rem;
+  padding: 0.6em 1.6em;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Başlangıç ekranı */
+.start-screen {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.start-bud {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.start-title {
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: 2.6rem;
+  margin: 0 0 1.8rem;
+  text-shadow: 0 0 24px rgba(255, 111, 154, 0.6);
+}
+
+/* Çiçek */
+.flower-wrap {
+  position: relative;
+  z-index: 1;
+  height: 78dvh;
+  aspect-ratio: 300 / 520;
+  max-width: 92vw;
+}
+
+.flower-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.flower-glow {
+  position: absolute;
+  left: 50%;
+  top: 33%;
+  width: 70%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 111, 154, 0.55) 0%, transparent 70%);
+  filter: blur(20px);
+  opacity: 0;
+}
+
+/* Parçacıklar */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  bottom: -40px;
+  opacity: 0;
+  text-shadow: 0 0 8px currentColor;
+}
+
+/* Final mesajı */
+.final-message {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 4dvh;
+  transform: translateX(-50%);
+  width: min(560px, calc(100% - 32px));
+  text-align: center;
+  padding: 1.4rem 1.6rem 1.6rem;
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid rgba(255, 179, 201, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.final-title {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  margin: 0 0 0.6rem;
+  color: var(--pink-soft);
+}
+
+.final-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 0.8rem;
+  color: var(--text);
+}
+
+.final-signature {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin: 0 0 1.1rem;
+}

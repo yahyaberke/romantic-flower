@@ -1,0 +1,82 @@
+/* Tablet */
+@media (max-width: 768px) {
+  .start-title {
+    font-size: 2.1rem;
+  }
+
+  .final-title {
+    font-size: 1.9rem;
+  }
+}
+
+/* Telefon */
+@media (max-width: 480px) {
+  .start-bud {
+    font-size: 3.2rem;
+  }
+
+  .start-title {
+    font-size: 1.8rem;
+  }
+
+  .flower-wrap {
+    height: 70dvh;
+  }
+
+  .final-message {
+    bottom: 2dvh;
+    padding: 1rem 1.1rem 1.2rem;
+    border-radius: 18px;
+  }
+
+  .final-title {
+    font-size: 1.6rem;
+  }
+
+  .final-text {
+    font-size: 0.95rem;
+  }
+
+  .final-signature {
+    font-size: 1.2rem;
+  }
+}
+
+/* Kısa ekranlar (yatay telefon) */
+@media (max-height: 520px) {
+  .flower-wrap {
+    height: 92dvh;
+  }
+
+  .final-message {
+    left: auto;
+    right: 16px;
+    bottom: 16px;
+    transform: none;
+    width: min(380px, 50vw);
+    animation-name: fadeIn;
+  }
+}
+
+/* Hareket azaltma tercihi */
+@media (prefers-reduced-motion: reduce) {
+  .stem,
+  .leaf,
+  .petal,
+  .flower-center,
+  .flower-glow {
+    animation-duration: 0.01s !important;
+    animation-delay: 0s !important;
+  }
+
+  .flower-svg,
+  .particle,
+  .pulse,
+  .start-bud {
+    animation: none !important;
+  }
+
+  .particle {
+    display: none;
+  }
+}
